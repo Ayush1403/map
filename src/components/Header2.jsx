@@ -8,7 +8,7 @@ const Header2 = () => {
   const [isTrendingOpen, setTrendingOpen] = useState(false);
 
   return (
-    <header className="flex justify-between items-center py-3 px-4 bg-white mt-2 bgcolor">
+    <header className="flex justify-between items-center py-3 px-4 bg-white mt-2 bg-transparent">
       {/* Left Section: Categories, Trending, Search */}
       <div className="flex items-center space-x-8 flex-grow">
         {/* Increased space-x from 4 to 8 */}
