@@ -39,7 +39,7 @@ const HeroSection = () => {
           </button >
           </NavLink>
           <NavLink to={"/map"}>
-          <button className="px-6 py-3 bg-white text-black font-semibold rounded-full shadow-lg hover:bg-gray-200 transition">
+          <button className="px-6 py-4 bg-white text-black font-semibold rounded-full shadow-lg hover:bg-gray-200 transition">
             <span className="flex items-center textcolor">
               <MdOutlineArrowOutward />
             </span>

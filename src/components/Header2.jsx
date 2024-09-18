@@ -8,7 +8,11 @@ const Header2 = () => {
   const [isTrendingOpen, setTrendingOpen] = useState(false);
 
   return (
+<<<<<<< HEAD
     <header className="flex flex-col md:flex-row justify-between items-center py-3 px-4 mt-2 bgcolor">
+=======
+    <header className="flex justify-between items-center py-3 px-4 bg-white mt-2 bg-transparent">
+>>>>>>> 7f6695162edc5191ca13e7a88992aa2c56d79624
       {/* Left Section: Categories, Trending, Search */}
       <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8 w-full md:flex-grow">
         {/* Dropdowns Section */}
