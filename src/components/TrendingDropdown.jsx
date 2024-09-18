@@ -23,29 +23,53 @@ const trendingItems = [
 const TrendingDropdown = ({ isOpen, setIsOpen }) => {
   const [hoveredItem, setHoveredItem] = useState(null);
   const dropdownRef = useRef(null);
+  const timerRef = useRef(null);
+
+  // Handle opening dropdown on hover
+  const handleMouseEnter = () => {
+    clearTimeout(timerRef.current);
+    setIsOpen(true);
+  };
+
+  // Handle closing dropdown with a delay
+  const handleMouseLeave = () => {
+    timerRef.current = setTimeout(() => {
+      setIsOpen(false);
+    }, 300); // Adjust delay as needed
+  };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsOpen(false);
+        timerRef.current = setTimeout(() => {
+          setIsOpen(false);
+        }, 300); // Adjust delay as needed
       }
     };
 
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      clearTimeout(timerRef.current);
+    };
   }, [setIsOpen]);
 
   return (
-    <div className="relative" ref={dropdownRef}>
+    <div
+      className="relative z-50"
+      ref={dropdownRef}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center bg-pink-50 py-2 px-3 rounded-full text-gray-500 hover:text-black transition focus:outline-none"
+        className="flex items-center bg-pink-50 py-2 px-3 rounded-full text-gray-500 hover:text-black transition focus:outline-none mr-10 textcolor"
       >
         Trending
         {isOpen ? (
-          <FiChevronUp className="ml-10 bg-white rounded-full text-xl" />
+          <FiChevronUp className="ml-28 bg-white rounded-full text-xl" />
         ) : (
-          <FiChevronDown className="ml-10 bg-white rounded-full text-xl" />
+          <FiChevronDown className="ml-28 bg-white rounded-full text-xl" />
         )}
       </button>
       {isOpen && (
@@ -57,13 +81,13 @@ const TrendingDropdown = ({ isOpen, setIsOpen }) => {
                   key={item.id}
                   onMouseEnter={() => setHoveredItem(item.id)}
                   onMouseLeave={() => setHoveredItem(null)}
-                  className="px-4 py-3 hover:bg-gray-100  text-sm cursor-pointer"
+                  className="px-4 py-3 hover:bg-gray-100 text-sm cursor-pointer"
                 >
                   {item.text}
                 </div>
               ))}
             </div>
-            <div className="w-1/2 border-l  border-gray-300">
+            <div className="w-1/2 border-l border-gray-300">
               {trendingItems.map((item) => (
                 <div
                   key={item.id}

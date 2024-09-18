@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import Header from './Header1';
 
 const MapComponent = ({ onStateSelect }) => {
   const [hoveredState, setHoveredState] = useState(null);
@@ -75,7 +75,7 @@ const MapComponent = ({ onStateSelect }) => {
   return (
   
     <div className="relative w-full bg-transparent h-screen max-w-screen-lg mx-auto px-4 py-4">
-   
+     <Header />
       <div id="map" className="w-full h-full bg-gray-200">
         {!mapInitialized && (
           <div className="text-center text-gray-500">Loading map...</div>
