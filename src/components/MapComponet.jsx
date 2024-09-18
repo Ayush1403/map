@@ -73,11 +73,13 @@ const MapComponent = ({ onStateSelect }) => {
   }, [navigate, onStateSelect]);
 
   return (
-  
+    <>
+    <Header />
     <div className="relative w-full bg-transparent h-screen max-w-screen-lg mx-auto px-4 py-4">
-     <Header />
+    
       <div id="map" className="w-full h-full">
-     
+        
+        
       </div>
       {hoveredState && (
         <div className="absolute top-2 left-2 bg-white p-2 border border-gray-300 rounded shadow-md text-gray-800">
@@ -85,6 +87,7 @@ const MapComponent = ({ onStateSelect }) => {
         </div>
       )}
     </div>
+    </>
   );
 };
 
