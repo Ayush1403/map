@@ -33,7 +33,7 @@ const StatePage = () => {
   const imageUrl = getImage(imageName);
 
   const handleMapsClick = () => {
-    navigate("/maps");
+    navigate("/map");
   };
 
   const handleShopClick = () => {

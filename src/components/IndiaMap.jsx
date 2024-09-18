@@ -17,6 +17,7 @@ const MapComponent = ({ selectedSites }) => {
   const [routeControl, setRouteControl] = useState(null);
 
   useEffect(() => {
+    // Function to create route control
     const createRouteControl = () => {
       const waypoints = selectedSites.map((site) =>
         L.latLng(site.coordinates.latitude, site.coordinates.longitude)
@@ -27,28 +28,31 @@ const MapComponent = ({ selectedSites }) => {
         routeWhileDragging: true,
         lineOptions: { styles: [{ color: "#6FA1EC", weight: 5 }] },
         createMarker: (i, wp) => L.marker(wp.latLng, { icon: customIcon }),
-        show: false,
-        addWaypoints: false,
-        draggableWaypoints: false,
+        show: false, // Hides the turn-by-turn instructions
+        addWaypoints: false, // Prevents adding waypoints by interacting with the map
+        draggableWaypoints: false, // Prevents dragging waypoints
       }).addTo(map);
     };
 
+    // Clean up previous route control if it exists
     if (routeControl) {
       map.removeControl(routeControl);
-      setRouteControl(null);
+      setRouteControl(null);  // Reset routeControl to avoid stale state
     }
 
+    // Only add a new route if there are more than 1 site
     if (selectedSites.length > 1) {
       const control = createRouteControl();
       setRouteControl(control);
     }
 
+    // Cleanup on component unmount or when `selectedSites` changes
     return () => {
       if (routeControl) {
         map.removeControl(routeControl);
       }
     };
-  }, [selectedSites, map]);
+  }, [selectedSites, map]);  // Remove routeControl dependency to avoid extra rerenders
 
   return null;
 };
@@ -129,8 +133,8 @@ const IndiaMap = () => {
           ])
         );
         map.fitBounds(bounds);
-        map.setMaxBounds(bounds);
-        map.setMinZoom(map.getZoom());
+        map.setMaxBounds(bounds); // Set the state-specific bounds
+        map.setMinZoom(map.getZoom()); // Lock zoom level to prevent zooming out
       }
     }, [map, state]);
     return null;
@@ -140,8 +144,7 @@ const IndiaMap = () => {
     <>
       <Header1 />
       <div className="flex h-screen">
-        {/* Sidebar */}
-        <div className="w-80 bg-gray-100 p-4 fixed top-0 left-0 bottom-0 overflow-y-auto z-10">
+        <div className="w-1/4 p-4 bg-gray-100 overflow-y-auto">
           <div>
             <h2 className="text-xl font-bold mb-2">Add Sites to Route</h2>
             <label className="block mb-2">
@@ -232,8 +235,7 @@ const IndiaMap = () => {
           </div>
         </div>
 
-        {/* Map Section */}
-        <div className="flex-1 ml-80">
+        <div className="w-3/4">
           <MapContainer
             center={[20.5937, 78.9629]}
             zoom={5}
@@ -260,7 +262,7 @@ const IndiaMap = () => {
               >
                 <Popup>
                   <div className="cursor-pointer" onClick={() => handleSiteClick(site)}>
-                    <img src={site.image_url} alt={site.name} className="w-full h-32 object-cover rounded-md mb-2"/>
+                    <img src={site.image_url} alt={site.name} />
                     <h3 className="text-lg font-semibold">{site.name}</h3>
                     <p className="text-sm text-gray-600">{site.detailed_description}</p>
                   </div>
