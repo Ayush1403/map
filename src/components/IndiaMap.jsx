@@ -60,7 +60,6 @@ const IndiaMap = () => {
   const [selectedSites, setSelectedSites] = useState([]);
   const [siteToAdd, setSiteToAdd] = useState("");
   const [userLocation, setUserLocation] = useState(null);
-  const [sidebarVisible, setSidebarVisible] = useState(true);
 
   useEffect(() => {
     const query = new URLSearchParams(location.search);
@@ -141,18 +140,8 @@ const IndiaMap = () => {
     <>
       <Header1 />
       <div className="flex h-screen">
-        {/* Sidebar Toggle Button */}
-        <button
-          className="md:hidden fixed top-2 left-2 z-20 bg-blue-500 text-white p-2 rounded"
-          onClick={() => setSidebarVisible(!sidebarVisible)}
-        >
-          {sidebarVisible ? "Hide" : "Show"} Sidebar
-        </button>
-
         {/* Sidebar */}
-        <div
-          className={`fixed top-0 left-0 bottom-0 bg-gray-100 p-4 overflow-y-auto z-10 transition-transform duration-300 ${sidebarVisible ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 md:relative md:w-80`}
-        >
+        <div className="w-80 bg-gray-100 p-4 fixed top-0 left-0 bottom-0 overflow-y-auto z-10">
           <div>
             <h2 className="text-xl font-bold mb-2">Add Sites to Route</h2>
             <label className="block mb-2">
@@ -244,7 +233,7 @@ const IndiaMap = () => {
         </div>
 
         {/* Map Section */}
-        <div className={`flex-1 transition-transform duration-300 ${sidebarVisible ? "ml-80" : "ml-0"}`}>
+        <div className="flex-1 ml-80">
           <MapContainer
             center={[20.5937, 78.9629]}
             zoom={5}
@@ -271,7 +260,7 @@ const IndiaMap = () => {
               >
                 <Popup>
                   <div className="cursor-pointer" onClick={() => handleSiteClick(site)}>
-                    <img src={site.image_url} alt={site.name} />
+                    <img src={site.image_url} alt={site.name} className="w-full h-32 object-cover rounded-md mb-2"/>
                     <h3 className="text-lg font-semibold">{site.name}</h3>
                     <p className="text-sm text-gray-600">{site.detailed_description}</p>
                   </div>
