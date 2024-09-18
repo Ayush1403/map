@@ -10,7 +10,7 @@ import { selectCart } from "../store/productSlice";
 const Header1 = () => {
   const [isModalVisible, setModalVisible] = useState(false);
   const [isLoginMode, setLoginMode] = useState(true);
-  //const cartItems = useSelector(selectCart); // Get cart items from the store
+  const [isMenuOpen, setMenuOpen] = useState(false); // For mobile menu toggle
 
   const openLogin = () => {
     setLoginMode(true);
@@ -30,24 +30,52 @@ const Header1 = () => {
     window.location.href = "https://shop.sanskriti.pushkarverma.dev/";
   };
 
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <header className="flex justify-between items-center py-4 px-8 bg-white relative z-100 bgcolor">
+    <header className="flex justify-between items-center py-4 px-4 sm:px-8 relative z-100 bgcolor">
       {/* Left Side: Hamburger Menu */}
-      <div className="flex items-center space-x-4">
-        <button className="text-gray-600 hover:text-black">
+      <div className="relative flex items-center space-x-4">
+        <button className="text-gray-600 hover:text-black sm:hidden" onClick={toggleMenu}>
           <GiHamburgerMenu />
         </button>
+
+        {/* Mobile Dropdown Menu - Appears below the Hamburger */}
+        {isMenuOpen && (
+          <div className="absolute left-0 top-full mt-2 bg-white shadow-md py-2 w-40 rounded-lg z-20">
+            <button
+              className="block w-full text-left text-gray-600 hover:text-black transition px-4 py-2"
+              onClick={openLogin}
+            >
+              Login
+            </button>
+            <button
+              className="block w-full text-left text-gray-600 hover:text-black transition px-4 py-2"
+              onClick={openSignup}
+            >
+              Sign Up
+            </button>
+            <button
+              className="block w-full text-left text-gray-600 hover:text-black transition px-4 py-2"
+              onClick={handleShopClick}
+            >
+              Shop
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Center: Logo */}
-      <div className="absolute left-1/2 transform -translate-x-1/2">
+      <div className="absolute left-1/2 transform -translate-x-1/2 sm:static sm:translate-x-0">
         <Link to="/">
           <img src={logo} alt="Logo" className="h-10" />
         </Link>
       </div>
 
       {/* Right Side: Buttons */}
-      <div className="flex items-center space-x-6">
+      <div className="hidden sm:flex items-center space-x-6">
         <button className="text-gray-600 hover:text-black transition textcolor">
           About
         </button>
@@ -62,7 +90,7 @@ const Header1 = () => {
         </button>
         <button
           onClick={openSignup}
-          className="text-gray-600 hover:text-black transition textcolor  rounded-full"
+          className="text-gray-600 hover:text-black transition textcolor rounded-full"
         >
           Sign Up
         </button>

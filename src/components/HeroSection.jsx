@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 const HeroSection = () => {
   return (
     <div
-      className="relative rounded-lg overflow-hidden"
+      className="relative  rounded-lg overflow-hidden"
       style={{
         height: "550px", // Height of the hero section
         width: "calc(100% - 10rem)", // Further increased width
@@ -30,7 +30,7 @@ const HeroSection = () => {
         {/* Centered Button Container */}
         <div className="absolute bottom-8 left-0 right-0 flex justify-center space-x-2 px-6 md:px-16 lg:px-20">
           {/* Reduced space between buttons */}
-          <NavLink to={"/india"}>
+          <NavLink to={"/"}>
           <button
             className="px-8 py-3 bg-white text-gray-600 font-semibold rounded-full shadow-md textcolor" // Disabled button styles
             disabled
