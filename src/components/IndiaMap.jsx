@@ -21,6 +21,7 @@ const MapComponent = ({ selectedSites }) => {
     const createRouteControl = () => {
       const waypoints = selectedSites.map((site) =>
         L.latLng(site.coordinates.latitude, site.coordinates.longitude)
+      
       );
 
       return L.Routing.control({
@@ -247,10 +248,14 @@ const IndiaMap = () => {
             touchZoom={false}
             style={{ height: "100vh", width: "100%" }}
           >
+           
             <TileLayer
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               attribution="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
             />
+             <button className="bg-black">
+              hello
+            </button>
             {heritageData[selectedState]?.map((site) => (
               <Marker
                 key={site.name}
