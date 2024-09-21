@@ -14,7 +14,7 @@ const imageImports = {
 const WhatsNew = () => {
   return (
     <div className="w-full">
-      <h1 className="text-2xl font-semibold mb-4 text-center w-full">
+      <h1 className="text-2xl font-semibold mb-4 text-center w-full text-[#9E080D]">
         What's New
       </h1>
 
