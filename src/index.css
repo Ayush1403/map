@@ -22,7 +22,7 @@
   scrollbar-width: none;     /* Firefox */
 }
 .bgcolor{
-  background-color:#F1EFDD;
+  background-color:#E9D3B0;
 }
 .textcolor{
   color:#9E080D;
@@ -87,12 +87,5 @@
 
 .object-cover {
   object-fit: cover; /* Cover image within its box */
-}
-
-.leaflet-routing-alternatives-container{
-  visibility: hidden;
-}
-.leaflet-routing-container{
-  visibility: hidden;
 }
 
