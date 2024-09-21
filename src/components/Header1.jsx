@@ -66,9 +66,12 @@ const Header1 = () => {
           </div>
         )}
       </div>
-
+      
       {/* Center: Logo */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 sm:static sm:translate-x-0">
+      <div className="flex-grow flex mx-10 justify-evenly">
+      <button className="text-gray-600 ml-7 opacity-0 hover:text-black transition textcolor">
+          About
+        </button>
         <Link to="/">
           <img src={logo} alt="Logo" className="h-10" />
         </Link>
