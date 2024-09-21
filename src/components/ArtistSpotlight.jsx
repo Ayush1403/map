@@ -48,7 +48,7 @@ const SideCarouselComponent = () => {
 
   return (
     <>
-      <h1 className="text-2xl font-semibold mb-4 text-center w-full">
+      <h1 className="text-2xl font-semibold mb-4 text-center w-full text-[#9E080D]">
         Artist Spotlight
       </h1>
       <div className="flex justify-center mt-10">
@@ -80,11 +80,11 @@ const SideCarouselComponent = () => {
             />
           </div>
           <div className="border-l border-gray-300 h-full"></div>
-          <div className="w-1/2 h-full flex items-center justify-center flex-col bg-[#9E080D] text-white">
-            <h2 className="text-3xl font-bold pl-4 text-left">
+          <div className="w-1/2 h-full grid grid-cols-1 bg-[#9E080D] text-white">
+            <h2 className="text-3xl font-bold pl-4 mt-56 grid-column: 1 / span 1;">
               {carouselContent[activeIndex].heading}
             </h2>
-            <p className="mt-10 text-justify px-4">
+            <p className=" text-justify px-4">
               {carouselContent[activeIndex].text}
             </p>
           </div>
