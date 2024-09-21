@@ -88,4 +88,10 @@
 .object-cover {
   object-fit: cover; /* Cover image within its box */
 }
+.leaflet-routing-alternatives-container{
+  visibility: hidden;
+}
+.leaflet-routing-container{
+  visibility: hidden;
+}
 
