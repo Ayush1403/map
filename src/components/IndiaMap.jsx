@@ -145,7 +145,7 @@ const IndiaMap = () => {
     <>
       <Header1 />
       <div className="flex h-screen">
-        <div className="w-1/4 p-4 bg-gray-100 overflow-y-auto">
+       <div className="w-1/4 p-4 bg-gray-100 overflow-y-auto h-full">
           <div>
             <h2 className="text-xl font-bold mb-2">Add Sites to Route</h2>
             <label className="block mb-2">
