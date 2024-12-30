@@ -1,70 +1,104 @@
-# Getting Started with Create React App
+# Sanskrit Omega
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Sanskrit Omega is an interactive platform designed to provide users with an immersive experience of India's heritage sites. It combines an engaging map interface with e-commerce functionalities to enhance user interaction and accessibility.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Interactive Map**: Explore heritage sites across India using a dynamic and interactive map.
+- **State Selection**: Zoom into states to view specific heritage sites within that region.
+- **Optimal Routing**: Compute the shortest or most efficient routes between two or more selected heritage sites.
+- **Heritage Exploration**: Discover details about heritage sites, including historical significance, images, and location.
+- **E-commerce Integration**: Purchase heritage-related products and souvenirs through a user-friendly online store.
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend**: React.js, Tailwind CSS
+- **Mapping Library**: React-Leaflet
+- **Backend**: Node.js (if applicable)
+- **Hosting**: Vercel
+- **Additional Tools**: SimpleMaps, GeoJSON for map data
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+To run this project locally, follow these steps:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
+- Node.js installed on your machine
+- Git for cloning the repository
 
-### `npm run build`
+### Steps
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Ayush1403/map.git
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Navigate to the project directory:
+   ```bash
+   cd map
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-### `npm run eject`
+4. Start the development server:
+   ```bash
+   npm start
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+5. Open your browser and navigate to `http://localhost:3000` to view the application.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Usage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Use the map to explore various heritage sites.
+2. Select a state to zoom in and display all heritage sites within the region.
+3. Add heritage sites to compute routes and view optimal paths.
+4. Visit the e-commerce section to explore and purchase related products.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Screenshots
 
-## Learn More
+_Add screenshots of your application here to showcase its features._
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Deployment
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The project is live at [Sanskrit Omega](https://sanskrit-omega.vercel.app/).
 
-### Code Splitting
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Contributions are welcome! Please follow these steps to contribute:
 
-### Analyzing the Bundle Size
+1. Fork the repository.
+2. Create a new branch for your feature or bugfix.
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Commit your changes.
+   ```bash
+   git commit -m "Description of changes"
+   ```
+4. Push to the branch.
+   ```bash
+   git push origin feature-name
+   ```
+5. Open a Pull Request.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## License
 
-### Making a Progressive Web App
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Acknowledgments
 
-### Advanced Configuration
+- Inspired by the rich heritage of India.
+- Thanks to all contributors and libraries used in the project.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Contact
 
-### Deployment
+For inquiries or support, please reach out:
+- **Email**: [YourEmail@example.com](mailto:YourEmail@example.com)
+- **GitHub**: [Ayush1403](https://github.com/Ayush1403)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Enjoy exploring the heritage of India with Sanskrit Omega! 🌏✨
